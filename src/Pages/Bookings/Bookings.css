@@ -5,13 +5,12 @@
 }
 .container3{
   
-   height: 500px;
+   height: 550px;
     /* font-size: 15px; */
-    background-color: rgb(229, 229, 229);
+    background-color: rgb(236, 249, 255);
 }
 .contents1{
     display: flex;
-    
     justify-content: space-between;
 }
 .head2{
@@ -20,6 +19,20 @@
     font-weight: 600;
 }
 .content2{
-    width: 100px;
+    width: 10px;
     outline: none;
+}
+.input2{
+    width: 250px;
+    margin-left: 10px;
+}
+.first{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    font-weight: 700;
+}
+.footer{
+    margin-top: 10px;
+    border: 1px solid black;
 }

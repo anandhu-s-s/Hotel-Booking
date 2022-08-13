@@ -12,16 +12,16 @@ const Header = () => {
     <div className='container1'>
         <header>
         <div className='links'><img src={logo} alt=''/></div>
-        <div> <Link to={'bookings'} className='link' >Bookings</Link></div>
-        <div className='links'>Homepage</div>
-        <div className='link'> <Link to={'room1'} className='link' >Rooms</Link></div>
+        <div className='links'> Bookings</div>
+        <div className='links' onClick={()=>navigate('/')}>HomePage</div>
+        <div className='links'> <Link to={'/room1'} className='link' >Rooms</Link></div>
 
         <div className= 'links' onClick={()=>{setClick(!click)}}>
               Booking
             </div>   
-            <div className={click? 'none':'list'}>
-              <div><Link to={'newbooking'} className='link'>New Booking</Link> </div>
-            <div><Link to={'booking'} className='link'>Booking</Link> </div>
+            <div className={click? 'list':'none'}>
+              <div><Link to={'/newbooking'} className='link'>New Booking</Link> </div>
+            <div><Link to={'/bookings'} className='link'>Booking</Link> </div>
             </div>
         <div className='links right' ><img src={user} alt=''/>
             Administrator

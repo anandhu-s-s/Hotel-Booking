@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
-import Booking from './Booking/Booking'
+
+
 import Bookings from './Bookings/Bookings';
 import Home from './Home/Home';
 import Newbooking from './Rooms/Newbooking';
@@ -13,10 +14,11 @@ const index = () => {
             
                 <Route path='/' element={<Home/>}/>
                 <Route path='newbooking' element={<Newbooking/>}/>
-                <Route path='/booking' element={<Booking/>}/>
+               
                 <Route path='/room1' element={<Room1/>}/>
                
                 <Route path='/bookings' element={<Bookings/>}/>
+               
 
 
 

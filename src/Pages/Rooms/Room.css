@@ -48,7 +48,7 @@ label{
     margin-left: 22px;
     
 }
-.get{
+/* .get{
     height: 40px;
     width: 150px;
     margin-top: 0px;
@@ -70,4 +70,8 @@ label{
     border: none;
     color: rgb(255, 174, 0);
     font-weight: 600;
+} */
+.buttn{
+    display: flex;
+    flex-direction: row;
 }

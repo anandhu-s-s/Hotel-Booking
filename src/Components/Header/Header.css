@@ -3,11 +3,11 @@
     box-sizing: border-box;
 }
 .container1{
-    background-color: rgba(255, 255, 255, 0.881);
+    
     width: 100%;
 }
 header{
-    background-color: rgb(247, 213, 150);
+    background-color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     height: 50px;
@@ -16,6 +16,8 @@ header{
 .links{
     font-size: 15px;
     padding-left: 10px;
+    text-decoration: none;
+    outline: none;
 }
 .none{
     display: none;
@@ -25,6 +27,7 @@ header{
     font-size: 14px;
     right: 60px;
     top: 40px;
+    
     background-color: rgb(255, 255, 255);
 
     
@@ -43,6 +46,7 @@ header{
 .link{
     text-decoration: none;
     outline: none;
+    color: black;
 }
 select{
     border: none;

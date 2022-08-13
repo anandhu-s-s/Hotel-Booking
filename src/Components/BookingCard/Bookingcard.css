@@ -1,0 +1,15 @@
+.card{
+    margin-top: 20px;
+    margin-left: 14px;
+     
+    display: flex;
+    justify-content: space-around;
+}
+.name{
+    margin-left: 10px;
+
+}
+.number{
+    margin-left: 10px;
+
+}
