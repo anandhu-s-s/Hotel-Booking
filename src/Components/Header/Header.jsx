@@ -9,11 +9,12 @@ const Header = () => {
         const navigate=useNavigate();
         const[click,setClick]=useState(false);
   return (
+    <>
     <div className='container1'>
         <header>
         <div className='links'><img src={logo} alt=''/></div>
         <div className='links'> Bookings</div>
-        <div className='links' onClick={()=>navigate('/')}>HomePage</div>
+        <div className='links' ><Link to={'/'} className='link' >HomePage</Link></div>
         <div className='links'> <Link to={'/room1'} className='link' >Rooms</Link></div>
 
         <div className= 'links' onClick={()=>{setClick(!click)}}>
@@ -28,6 +29,7 @@ const Header = () => {
         <div className='links right logout'><img src={logout} alt=''/></div>
         </div>
         </header></div>
+        </>
   )
 }
 

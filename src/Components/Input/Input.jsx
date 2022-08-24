@@ -2,9 +2,10 @@ import React from 'react'
 
 
 
-const Input = (props) => {
+const Input = ({label,type,onChange,value}) => {
   return (
-    <div> <label>{props.label}</label><br/><input type={props.type} /></div>
+    <div> <label>{label}</label><br/>
+    <input type={type}  onChange={onChange} value={value} /></div>
   )
 }
 

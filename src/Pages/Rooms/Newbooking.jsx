@@ -11,11 +11,12 @@ const Newbooking = () => {
   const [click,setClick]=useState();
   return (
     <>
+    
+    <div className='container6'>
     <Header/>
-    <div className='container2'>
      
        <div className='head'>New Booking</div>
-        <div className='contents'>
+        <div className='contents4'>
            <Input label="Guest First Name" type="text"/>
            <Input label="Guest Last Name" type="text"/>
            <Input label="Checked in Date" type="date"/>
@@ -23,13 +24,23 @@ const Newbooking = () => {
            <Input label="Number of Adults" type="number"/>
            <Input label="Number of children" type="number"/>
            <Input label="Rooms"/>
+
+
+
             <div className='btn'>
-            <Button type='primary' label='Get Available Room' onClick={()=>setClick(!click)}></Button>
-                <div className={click? 'booking':'none'}>
-                <Button type='secondary' label='Book Room'></Button> 
+               <Button type='primary' label='Get Available Room' onClick={()=>setClick(true)}></Button>
+               <Button type='secondary' label='Book Room' ></Button> 
                 <div onClick={()=>navigate(-1)} className='back'>Back</div>
                 </div>
+
+                <div className={click? 'booking':'none'}>
+                   <Button type='secondary' label='Check In' ></Button> 
+                   <Button type='secondary' label='Check Out' ></Button> 
+                   <Button type='secondary' label='Cancel' ></Button> 
                 </div>
+               
+                
+                
            
         </div>
     </div>

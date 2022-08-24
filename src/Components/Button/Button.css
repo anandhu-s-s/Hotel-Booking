@@ -3,34 +3,31 @@
 }
 
 .primary{
-    height: 40px;
+   
     cursor: pointer;
-    margin-top: 0px;
-    margin-left: 35px;
-    background-color: orange;
+   
+   
+    background-color: rgb(229, 165, 45);
     border: 1px solid black;
-    border-radius: 3px;
+    border-radius: 2px;
     color: rgb(255, 255, 255);
     font-weight: 600;
 
 }
 .secondary{
          
-    height: 40px;
+   
     border: 1px solid rgb(255, 153, 0);
     cursor: pointer;
-    margin-left: 35px;
-    background-color: rgb(255, 255, 255);
-    
+    border-radius: 2px;
+    background-color: rgb(255, 255, 255); 
     color: rgb(255, 174, 0);
     font-weight: 600;
 
 }
 .teritiary{
-    height: 40px;
-  
+   
     cursor: pointer;
-    margin-left: 35px;
     background-color: rgb(255, 255, 255);
     border: none;
     color: rgb(255, 174, 0);
