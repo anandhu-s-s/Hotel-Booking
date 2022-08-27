@@ -9,6 +9,45 @@ import { useState } from 'react';
 const Newbooking = () => {
   const navigate=useNavigate();
   const [click,setClick]=useState();
+  const [ item,setItem]= useState({FirstName:"",LastName:"",CheckIn:"",CheckOut:"",noOfadults:"",noOfChildren:""})
+
+  async function Signup(e){
+
+   try{
+ 
+ 
+   e.preventDefault();
+  
+ 
+ 
+   
+   let result=await fetch("https://localhost:7149/NewBooking",{
+   method:'POST',
+   body:JSON.stringify(item),
+   headers:{
+     "Content-Type":'application/json',
+     "Accept":'application/json'
+ 
+   }
+ 
+ })
+ result= await result.json();
+ console.log(result);
+ alert("User Saved")
+
+ setItem({FirstName:"",LastName:"",CheckIn:"",CheckOut:"",noOfadults:"",noOfChildren:""})
+ }
+ catch
+ {
+   alert('ERROR');
+ }  
+ 
+ }
+ 
+ function onChange(value,key){
+   setItem((prev)=>({...prev,[key]:value}))
+ }
+
   return (
     <>
     
@@ -17,12 +56,13 @@ const Newbooking = () => {
      
        <div className='head'>New Booking</div>
         <div className='contents4'>
-           <Input label="Guest First Name" type="text"/>
-           <Input label="Guest Last Name" type="text"/>
-           <Input label="Checked in Date" type="date"/>
-           <Input label="Checked Out Date" type="date"/>
-           <Input label="Number of Adults" type="number"/>
-           <Input label="Number of children" type="number"/>
+        <form onSubmit={Signup} >
+           <Input label="Guest First Name" type="text"  value={item.FirstName} onChange={(e)=>{onChange(e.target.value,'FirstName')}}/>
+           <Input label="Guest Last Name" type="text"   value={item.LastName} onChange={(e)=>{onChange(e.target.value,'LastName')}}/>
+           <Input label="Checked in Date" type="date"  value={item.CheckIn} onChange={(e)=>{onChange(e.target.value,'CheckIn')}}/>
+           <Input label="Checked Out Date" type="date"  value={item.CheckOut} onChange={(e)=>{onChange(e.target.value,'CheckOut')}}/>
+           <Input label="Number of Adults" type="number"    value={item.noOfadults} onChange={(e)=>{onChange(e.target.value,'noOfadults')}}/>
+           <Input label="Number of children" type="number"  value={item.noOfChildren} onChange={(e)=>{onChange(e.target.value,'noOfChildren')}}/>
            <Input label="Rooms"/>
 
 
@@ -32,7 +72,7 @@ const Newbooking = () => {
                <Button type='secondary' label='Book Room' ></Button> 
                 <div onClick={()=>navigate(-1)} className='back'>Back</div>
                 </div>
-
+                </form>
                 <div className={click? 'booking':'none'}>
                    <Button type='secondary' label='Check In' ></Button> 
                    <Button type='secondary' label='Check Out' ></Button> 

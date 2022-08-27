@@ -1,10 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Bookings.css'
 import Header from '../../Components/Header/Header'
 import Button from '../../Components/Button/Button';
 import Details from '../../Components/Bookingdetails/Details';
 import { Link } from 'react-router-dom';
+
 const Bookings = () => {
+
+  const [ data,setData]= useState([]);
+
+
+  async function getData(){
+    const respond=await fetch("https://localhost:7149/NewBooking",{
+    method:'GET',
+    headers:{
+      "Content-Type":'application/json',
+  
+    }
+  
+  })
+  return await respond.json();
+    
+  
+  }
+  useEffect(()=>{
+    const userData=async ()=>{
+    const respond=await getData();
+    setData(respond);
+  };
+  userData();
+  },[]);
   return (
    <div className="container3">
      <Header/>
@@ -30,9 +55,11 @@ const Bookings = () => {
         <div className="bk">Status</div>
       
     </div>
-    <Details a='Silva' b='Silva' c='101' d='10/11/2022' e='28/11/2022' f='In'/>
-    <Details a='Silva' b='Silva' c='101' d='10/11/2022' e='28/11/2022' f='In'/>
-    <Details a='Silva' b='Silva' c='101' d='10/11/2022' e='28/11/2022' f='In'/>
+    {data.map((value,index)=>
+    (
+    <Details a={value.lastName} b={value.firstName} c={""} d={value.checkIn} e={value.checkOut} f={""}/>
+
+    ))}
     
     </div>
 
